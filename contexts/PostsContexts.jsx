@@ -20,7 +20,9 @@ export const PostsContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <PostsContext.Provider value={posts}>{children}</PostsContext.Provider>
+    <PostsContext.Provider value={{ posts, postsFetch }}>
+      {children}
+    </PostsContext.Provider>
   );
 };
 

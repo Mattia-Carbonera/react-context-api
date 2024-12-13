@@ -8,7 +8,24 @@ import { PostsContent } from "../../contexts/PostsContexts";
 import Card from "./card/Card";
 
 export default function MyPosts() {
-  const posts = PostsContent();
+  const { posts, postsFetch } = PostsContent();
+
+  console.log(posts);
+  // Stampo in pagina le card dei post
+  // const [postArray, setPostArray] = useState([]);
+
+  // const postsFetch = () => {
+  //   fetch(serverHosting)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setPostArray(data[1]);
+  //       // console.log(postArray);
+  //     });
+  // };
+
+  // useEffect(() => {
+  //   postsFetch();
+  // }, []);
 
   //   gestisco il click dei bottoni per la modal
   const [selectedPostModal, setSelectedPostModal] = useState();

@@ -25,7 +25,7 @@ export default function ShowProduct() {
 
   const { title, content, image, tags } = selectedPost;
 
-  console.log(tags);
+  // console.log(tags);
 
   return (
     <div className="container">
