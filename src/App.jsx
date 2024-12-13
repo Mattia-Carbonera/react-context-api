@@ -11,18 +11,23 @@ import AboutUs from "./components/AboutUs";
 import MyPosts from "./components/MyPosts";
 import ShowProduct from "./components/ShowProduct/ShowProduct";
 
+// import context
+import { PostsContextProvider } from "../contexts/PostsContexts";
+
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<DefaultLayout />}>
-          <Route index Component={HomePage} />
-          <Route path="/about" Component={AboutUs} />
-          <Route path="/posts" Component={MyPosts} />
-          <Route path="/posts/:id" Component={ShowProduct} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <PostsContextProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<DefaultLayout />}>
+            <Route index Component={HomePage} />
+            <Route path="/about" Component={AboutUs} />
+            <Route path="/posts" Component={MyPosts} />
+            <Route path="/posts/:id" Component={ShowProduct} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </PostsContextProvider>
   );
 }
 

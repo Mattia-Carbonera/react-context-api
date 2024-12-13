@@ -1,25 +1,14 @@
 // import posts from "../db/posts";
 const serverHosting = import.meta.env.VITE_SERVER_HOSTING;
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+
+// import !! PostsContext !!
+import { PostsContent } from "../../contexts/PostsContexts";
 import Card from "./card/Card";
 
 export default function MyPosts() {
-  // Stampo in pagina le card dei post
-  const [postArray, setPostArray] = useState([]);
-
-  const postsFetch = () => {
-    fetch(serverHosting)
-      .then((res) => res.json())
-      .then((data) => {
-        setPostArray(data[1]);
-        // console.log(postArray);
-      });
-  };
-
-  useEffect(() => {
-    postsFetch();
-  }, []);
+  const posts = PostsContent();
 
   //   gestisco il click dei bottoni per la modal
   const [selectedPostModal, setSelectedPostModal] = useState();
@@ -52,7 +41,7 @@ export default function MyPosts() {
         <h1>My Posts</h1>
         <div className="container">
           <div className="card-container">
-            {postArray.map((post, index) => (
+            {posts.map((post, index) => (
               <Card
                 id={post.id}
                 key={index}
