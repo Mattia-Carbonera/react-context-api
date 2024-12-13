@@ -26,6 +26,6 @@ export const PostsContextProvider = ({ children }) => {
   );
 };
 
-export const PostsContent = () => {
+export const PostContext = () => {
   return useContext(PostsContext);
 };

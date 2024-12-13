@@ -4,20 +4,19 @@ const serverHosting = import.meta.env.VITE_SERVER_HOSTING;
 import { useState, useEffect, useContext } from "react";
 
 // import !! PostsContext !!
-import { PostsContent } from "../../contexts/PostsContexts";
+import { PostContext } from "../../contexts/PostsContexts";
 import Card from "./card/Card";
 
 export default function MyPosts() {
-  const { posts, postsFetch } = PostsContent();
+  // importo il context
+  const { posts, postsFetch } = PostContext();
 
-  //   gestisco il click dei bottoni per la modal
+  //  gestisco il click dei bottoni per la modal
   const [selectedPostModal, setSelectedPostModal] = useState();
   const [selectedPostModalName, setSelectedPostModalName] = useState("");
   const handlerModalButton = (e) => {
     setSelectedPostModal(e.target.id);
     setSelectedPostModalName(e.target.name);
-    console.log(e.target.id);
-    console.log(e.target.name);
   };
 
   //   gestisco eliminazione pizza
