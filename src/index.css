@@ -1,0 +1,82 @@
+/* GENERAL */
+main h1 {
+  text-align: center;
+}
+
+/* ---- */
+/* ACTIVE CLASS BUTTON */
+.active {
+  color: red;
+}
+/* ---- */
+nav {
+  display: flex;
+  justify-content: center;
+
+  padding: 2rem;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+ul > li {
+  margin: 0 1rem;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  text-align: center;
+}
+
+.card-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 250px;
+  height: 450px;
+  padding: 0.5rem;
+  margin: 1rem;
+
+  border: 1px solid gray;
+  border-radius: 10px;
+
+  background-color: lightgray;
+}
+
+.card-image {
+  text-align: center;
+}
+
+.card-image img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.button-container {
+  display: flex;
+  width: 100%;
+}
+
+/* Button.jsx */
+.button-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* ShowProduct.jsx */
+
+.selected-item {
+  margin-top: 8rem;
+  text-align: center;
+}
+
+.selected-item h2 {
+  margin-bottom: 6rem;
+}
